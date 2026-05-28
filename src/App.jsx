@@ -6,7 +6,7 @@ import React, {
 
 export default function App() {
   return (
-    <div className="bg-black text-cyan-300 min-h-screen overflow-y-auto font-mono">
+    <div className="bg-black text-cyan-300 font-mono w-full overflow-x-hidden">
       <style>{`
         body {
           margin: 0;
@@ -372,7 +372,7 @@ function MainSystem() {
   };
 
   return (
-    <div className="grid-bg p-2 md:p-4 min-h-screen">
+    <div className="grid-bg p-2 md:p-4 w-full">
 
       {/* HEADER */}
 
@@ -528,7 +528,7 @@ function MainSystem() {
 
 function CircuitEditor() {
   return (
-    <div className="h-[260px] md:h-[650px] bg-[#050816] rounded-2xl border border-cyan-500/20 relative overflow-auto">
+    <div className="h-[320px] md:h-[650px] bg-[#050816] rounded-2xl border border-cyan-500/20 relative overflow-auto">
 
       <svg
         viewBox="0 0 900 650"
@@ -575,7 +575,7 @@ function CircuitEditor() {
           Audio Input
         </text>
 
-        {/* INPUT WIRE */}
+        {/* WIRES */}
 
         <line
           x1="60"
@@ -624,8 +624,6 @@ function CircuitEditor() {
           2.2µF
         </text>
 
-        {/* CONNECTION */}
-
         <line
           x1="150"
           y1="120"
@@ -660,8 +658,6 @@ function CircuitEditor() {
         >
           R1 10kΩ
         </text>
-
-        {/* WIRE */}
 
         <line
           x1="330"
@@ -779,7 +775,7 @@ function CircuitEditor() {
           X OUT
         </text>
 
-        {/* SECOND STAGE */}
+        {/* SECOND OPAMP */}
 
         <polygon
           points="420,340 420,460 540,400"
@@ -852,7 +848,7 @@ function CircuitEditor() {
           RC FILTER
         </text>
 
-        {/* Y OUTPUT */}
+        {/* OUTPUT */}
 
         <line
           x1="710"
@@ -898,7 +894,6 @@ function CircuitEditor() {
         >
           GND
         </text>
-
       </svg>
     </div>
   );
@@ -908,7 +903,7 @@ function Slider({
   label,
   min,
   max,
-  step,
+ step,
   value,
   setValue,
 }) {
