@@ -528,7 +528,7 @@ function MainSystem() {
 
 function CircuitEditor() {
   return (
-    <div className="h-[320px] md:h-[650px] bg-[#050816] rounded-2xl border border-cyan-500/20 relative overflow-auto">
+    <div className="h-[260px] md:h-[650px] bg-[#050816] rounded-2xl border border-cyan-500/20 relative overflow-auto">
 
       <svg
         viewBox="0 0 900 650"
@@ -575,7 +575,7 @@ function CircuitEditor() {
           Audio Input
         </text>
 
-        {/* WIRES */}
+        {/* INPUT WIRE */}
 
         <line
           x1="60"
@@ -624,6 +624,8 @@ function CircuitEditor() {
           2.2µF
         </text>
 
+        {/* CONNECTION */}
+
         <line
           x1="150"
           y1="120"
@@ -658,6 +660,8 @@ function CircuitEditor() {
         >
           R1 10kΩ
         </text>
+
+        {/* WIRE */}
 
         <line
           x1="330"
@@ -775,7 +779,7 @@ function CircuitEditor() {
           X OUT
         </text>
 
-        {/* SECOND OPAMP */}
+        {/* SECOND STAGE */}
 
         <polygon
           points="420,340 420,460 540,400"
@@ -848,7 +852,7 @@ function CircuitEditor() {
           RC FILTER
         </text>
 
-        {/* OUTPUT */}
+        {/* Y OUTPUT */}
 
         <line
           x1="710"
@@ -894,6 +898,7 @@ function CircuitEditor() {
         >
           GND
         </text>
+
       </svg>
     </div>
   );
@@ -903,7 +908,7 @@ function Slider({
   label,
   min,
   max,
- step,
+  step,
   value,
   setValue,
 }) {
