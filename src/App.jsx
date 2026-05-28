@@ -33,14 +33,6 @@ export default function App() {
           accent-color: cyan;
         }
 
-        .component {
-          cursor: grab;
-        }
-
-        .component:active {
-          cursor: grabbing;
-        }
-
         canvas {
           touch-action: none;
         }
@@ -119,8 +111,7 @@ function MainSystem() {
               phase +
               t
           ) *
-          (140 +
-            audio.bass * 160) *
+          (120 + audio.bass * 140) *
           gain;
 
         const y =
@@ -129,8 +120,7 @@ function MainSystem() {
               p +
               t
           ) *
-          (140 +
-            audio.bass * 160) *
+          (120 + audio.bass * 140) *
           gain;
 
         if (i === 0) {
@@ -429,7 +419,7 @@ function MainSystem() {
 
         <div className="xl:col-span-8 flex flex-col gap-4">
 
-          <div className="glass rounded-3xl relative overflow-hidden h-[400px] md:h-[700px]">
+          <div className="glass rounded-3xl relative overflow-hidden h-[280px] md:h-[700px]">
 
             <canvas
               ref={visualizerRef}
@@ -452,7 +442,7 @@ function MainSystem() {
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
 
-            <div className="glass rounded-3xl p-4 h-[220px] md:h-[300px]">
+            <div className="glass rounded-3xl p-4 h-[180px] md:h-[300px]">
 
               <div className="text-xl md:text-2xl mb-3">
                 Oscilloscope
@@ -464,7 +454,7 @@ function MainSystem() {
               />
             </div>
 
-            <div className="glass rounded-3xl p-4 h-[220px] md:h-[300px]">
+            <div className="glass rounded-3xl p-4 h-[180px] md:h-[300px]">
 
               <div className="text-xl md:text-2xl mb-3">
                 Spectrum Analyzer
@@ -538,7 +528,7 @@ function MainSystem() {
 
 function CircuitEditor() {
   return (
-    <div className="h-[400px] md:h-[650px] bg-[#050816] rounded-2xl border border-cyan-500/20 relative overflow-auto">
+    <div className="h-[320px] md:h-[650px] bg-[#050816] rounded-2xl border border-cyan-500/20 relative overflow-auto">
 
       <svg
         viewBox="0 0 900 650"
@@ -885,7 +875,7 @@ function CircuitEditor() {
           Y OUT
         </text>
 
-        {/* POWER RAILS */}
+        {/* GROUND */}
 
         <line
           x1="80"
@@ -913,7 +903,7 @@ function Slider({
   label,
   min,
   max,
-  step,
+ step,
   value,
   setValue,
 }) {
